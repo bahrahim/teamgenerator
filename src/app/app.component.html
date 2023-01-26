@@ -19,8 +19,21 @@
   <p *ngIf="messageError">{{ messageError }}</p>
 
   <div class="choice">
-    <input type="text" placeholder="choix Nb équipes (1 à 5)">
+    <input
+      #inputTeam
+      type="text" 
+      placeholder="choix Nb équipes (1 à 5)"
+      (input)="onInputTeam(inputTeam.value)"
+      [value]="numberOfTeams"
+      >
     <button>Générer</button>
+  </div>
+
+  <div>
+    <h2>Team's name</h2>
+    <ul>
+      <li></li>
+    </ul>
   </div>
 
 

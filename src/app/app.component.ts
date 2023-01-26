@@ -9,7 +9,12 @@ export class AppComponent {
   newPlayer = '';
   Players : string[] = [];
   messageError : string = '';
-  
+
+  numberOfTeams : Number | "" = "";
+
+
+
+
 
   onInput(Player: string) {
     this.newPlayer = Player;
@@ -28,4 +33,11 @@ export class AppComponent {
     }
     
   }
-}
+
+
+  onInputTeam(value: string) {
+    this.numberOfTeams = Number(value);
+  }
+
+  }
+
