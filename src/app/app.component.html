@@ -3,19 +3,42 @@
   <h1>Team Generator</h1>
 
   <ul>
-    <li classe="player">Abdoul</li>
-    <li>Rahim</li>
+    <li *ngFor="let player of Players"> {{ player }}</li>
   </ul>
 
   <div class="choice">
-    <input type="text" placeholder="entrer un nom">
-    <button>Ajouter</button>
+    <input 
+      #inputPlayer
+      type="text" 
+      placeholder="entrer un nom"
+      (input)="onInput(inputPlayer.value)"
+      [value]="newPlayer"
+      >
+    <button (click)="addPlayer()">Ajouter</button>
   </div>
+  <p *ngIf="messageError">{{ messageError }}</p>
 
   <div class="choice">
-    <input type="text" placeholder="choix Nb équipes (1 à 5)">
-    <button>Générer</button>
+    <input
+      #inputTeam
+      type="text" 
+      placeholder="choix Nb équipes (1 à 5)"
+      (input)="onInputTeam(inputTeam.value)"
+      [value]="numberOfTeams"
+      >
+    <button (click)="generateTeams()">Générer</button>
   </div>
+
+
+  <div *ngIf="teams.length">
+    <div *ngFor = "let team of teams; let i = index" >
+      <h2 >Team {{ i + 1 }}</h2>
+      <ul>
+        <li *ngFor="let player of team"> {{ player }}</li>
+      </ul>
+    </div>
+  </div>
+
 
 
 
