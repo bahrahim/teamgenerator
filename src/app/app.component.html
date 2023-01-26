@@ -10,7 +10,7 @@
     <input 
       #inputPlayer
       type="text" 
-      placeholder="entrer un nom"
+      placeholder="Entrer le nom du joueur"
       (input)="onInput(inputPlayer.value)"
       [value]="newPlayer"
       >
@@ -22,7 +22,7 @@
     <input
       #inputTeam
       type="text" 
-      placeholder="choix Nb équipes (1 à 5)"
+      placeholder="Combien d'équipes voulez vous génerer?"
       (input)="onInputTeam(inputTeam.value)"
       [value]="numberOfTeams"
       >
