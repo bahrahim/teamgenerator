@@ -13,9 +13,6 @@ export class AppComponent {
   teams : string[][] = [];
 
 
-
-
-
   onInput(Player: string) {
     this.newPlayer = Player;
   }
@@ -41,8 +38,14 @@ export class AppComponent {
 
   generateTeams(){
     if(!this.numberOfTeams || this.numberOfTeams <=0){
+      this.messageError = 'Verifiez le nombre de joueurs';
       return;
     }
+    if(this.numberOfTeams > this.Players.length){
+      this.messageError = 'Pas assez de joueurs';
+      return;
+    }
+    this.messageError = '';
 
     const allPlayers = [...this.Players];
 
