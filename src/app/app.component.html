@@ -13,6 +13,8 @@
       placeholder="Entrer le nom du joueur"
       (input)="onInput(inputPlayer.value)"
       [value]="newPlayer"
+      [(ngModel)]="newPlayer"
+      (keyup.enter)="addPlayer()"
       >
     <button (click)="addPlayer()">Ajouter</button>
   </div>
